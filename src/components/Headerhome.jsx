@@ -78,7 +78,6 @@ const Header = () => {
     const [search, setSearch] = useState(null);
 
     const handleClick = (event) => {
-        setSearch(event.target.value)
         navigate("/filter", { state: search });
     };
 
@@ -104,7 +103,7 @@ const Header = () => {
             </div>
         </div>
         <div className={classes.searchbar}>
-            <TextField InputProps={{ className: classes.input }} label="Search for a phone..." color="primary"/>
+            <TextField InputProps={{ className: classes.input }} label="Search for a phone..." color="primary" onChange={(e)=>setSearch(e.target.value)}/>
             <button className={classes.btn} onClick={handleClick}>Go</button>
         </div>
     </header>
